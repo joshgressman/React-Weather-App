@@ -10,6 +10,7 @@ class SearchBar extends Component {
 
     //Bind contect of input changed
     this.onInputChange = this.onInputChange.bind(this);
+    // In the global execution context (outside of any function), this refers to the global object whether in strict mode or not.
   }
 
   //Event handles all DOM event change handlers
