@@ -19,9 +19,14 @@ class SearchBar extends Component {
    this.setState({term: event.target.value});
   }
 
+  //Prevents default form POST on submit causing page re-rendering
+  onFormSubmit(event){
+   event.preventDefault();
+  }
+
   render() {
     return (
-      <form className="input-group">
+      <form onSubmit={this.onFormSubmit} className="input-group">
        <input 
         className="form-control"
         placeholder="Get a five day forcast in you city"
