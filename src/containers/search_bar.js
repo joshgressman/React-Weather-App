@@ -18,6 +18,8 @@ class SearchBar extends Component {
     //Bind contect of input changed
     this.onInputChange = this.onInputChange.bind(this);
     // In the global execution context (outside of any function), this refers to the global object whether in strict mode or not.
+
+    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
   //Event handles all DOM event change handlers
@@ -31,7 +33,11 @@ class SearchBar extends Component {
    event.preventDefault();
 
    //Go fetch weather data via action creator creating an api request.
-
+   //Call action creator
+   this.props.fetchWeather(this.state.term);
+   
+   //Empty form value
+   this.setState({ term: ''});
   }
 
   render() {
