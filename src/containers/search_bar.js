@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 
+//Connect container to Redux
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchWeather } from '../actions/index';
+
+
+
 class SearchBar extends Component {
 
   // Initialize State
@@ -23,7 +30,8 @@ class SearchBar extends Component {
   onFormSubmit(event){
    event.preventDefault();
 
-   //Go fetch weather data
+   //Go fetch weather data via action creator creating an api request.
+
   }
 
   render() {
@@ -44,4 +52,10 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+//Hook up action creater to search bar container
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchWeather }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar);
+
