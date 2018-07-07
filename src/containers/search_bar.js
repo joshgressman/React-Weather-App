@@ -22,6 +22,8 @@ class SearchBar extends Component {
   //Prevents default form POST on submit causing page re-rendering
   onFormSubmit(event){
    event.preventDefault();
+
+   //Go fetch weather data
   }
 
   render() {
