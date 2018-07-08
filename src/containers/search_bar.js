@@ -35,7 +35,7 @@ class SearchBar extends Component {
    //Go fetch weather data via action creator creating an api request.
    //Call action creator
    this.props.fetchWeather(this.state.term);
-   
+  
    //Empty form value
    this.setState({ term: ''});
   }
