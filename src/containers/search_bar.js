@@ -15,7 +15,7 @@ class SearchBar extends Component {
 
     this.state = { term: ''};
 
-    //Bind contect of input changed
+    //Bind contect of input changed to this
     this.onInputChange = this.onInputChange.bind(this);
     // In the global execution context (outside of any function), this refers to the global object whether in strict mode or not.
 
